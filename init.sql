@@ -1,0 +1,1 @@
+CREATE TABLE report (date text)
