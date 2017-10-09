@@ -3,7 +3,7 @@
 
 服薬した時間を忘れるので、ボタンを押したらデータベースに日時の格納・LINE NotifyでLINEに通知が飛ぶように。
 
-## 追加で必要なもの
+## 追加で必要なパッケージ
 ````
 pip install requests
 ````
@@ -16,7 +16,7 @@ https://engineering.linecorp.com/ja/blog/detail/88
 export LINE_NOTIFY_TOKEN="yourtoken'
 ````
 
-### ペアリング・ソフトウェアのインストール
+### ペアリング・ボタンを扱うソフトウェアのインストール
 https://qiita.com/vimyum/items/8b7548ca8cf45383c5b0
 ### データベースの準備
 ````
