@@ -33,5 +33,5 @@ sqlite3 report.db < init.sql
 
 ### 立ち上げっぱなしにする
 ````
-nohup bluebutton -d="Shutter3" -c ~/config/bluebutton
+nohup bluebutton -d="Shutter3" -c ~/config/bluebutton &
 ````
