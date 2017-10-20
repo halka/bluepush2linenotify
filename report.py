@@ -42,7 +42,7 @@ def insertDB(dbfile, message):
 # LINE Notify
 
 
-def LineNofify(message):
+def LineNotify(message):
     import requests
     endpoint = 'https://notify-api.line.me/api/notify'
     token = os.getenv('LINE_NOTIFY_TOKEN')
@@ -57,7 +57,7 @@ def main():
             "/nc100421.mp3", 48000, 3)
     insertDB(os.path.abspath(os.path.dirname(__file__)) +
              "/report.db", nowdatetime)
-    LineNofify(nowdatetime)
+    LineNotify(nowdatetime)
 
 
 if __name__ == '__main__':
