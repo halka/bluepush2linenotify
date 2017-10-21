@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 import os.path
+import threading
 
 # now
 
@@ -53,11 +54,14 @@ def LineNotify(message):
 
 def main():
     nowdatetime = now()
-    playMp3(os.path.abspath(os.path.dirname(__file__)) +
-            "/nc100421.mp3", 48000, 3)
-    insertDB(os.path.abspath(os.path.dirname(__file__)) +
-             "/report.db", nowdatetime)
-    LineNotify(nowdatetime)
+    playSoundThread = threading.Thread(target=playMp3, args=(
+        os.path.abspath(os.path.dirname(__file__)) + "/nc100421.mp3", 48000, 3))
+    insertDBThread = threading.Thread(target=insertDB, args=(
+        os.path.abspath(os.path.dirname(__file__)) + "/report.db", nowdatetime))
+    LineNotifyThread = threading.Thread(target=LineNotify, args=(nowdatetime,))
+    playSoundThread.start()
+    LineNotifyThread.start()
+    insertDBThread.start()
 
 
 if __name__ == '__main__':
